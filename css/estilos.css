@@ -8,19 +8,20 @@ body{
     text-align: center;
 }
 
-h1{
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
 
 h2{
     margin-top: 30px;
     margin-bottom: 30px;
+    color: red;
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
 }
+
 
 input{
     display: block;
     margin: auto;
+    margin-top: 20px;
     margin-bottom: 20px;
     width: 300px;
     height: 25px;
@@ -33,9 +34,26 @@ input{
     width: 70px;
     font-size: 20px;
     text-align: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: rgb(206, 206, 255);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .calcular{
+    border-radius: 5px;
+    font-style: italic;
     width: 100px;
+    background-color: rgb(206, 206, 255);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+form{
+    margin-top: 50px;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 500px;
+    height: 300px;
+    margin-right: auto;
+    margin-left: auto;
+}

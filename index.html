@@ -9,21 +9,21 @@
 </head>
 <body>
 
-    <h1></h1>
 
     <h2>Conversor de moneda</h2>
-    <p>Para poder utilizar nuestro servicio indique en la primer casilla cuantos pesos quiere vender
+    <p>Para poder utilizar nuestro servicio indique en la primer casilla cuantos pesos Argentinos quiere cambiar
         <br>
         y luego en la segunda casilla coloque la moneda extranjera que desea comprar.
     </p>
 
     <br>
 
-    <form id="formCalculadora" method="dialog">
-        <label>Ingrese un número</label>
+    <form method="dialog">
+        <br>
+        <label class="texto">Ingrese cantidad de pesos ARG</label>
         <input type="text" id="numero1" placeholder="Ingrese el primer número">
         <label>Seleccione moneda</label>
-        <div >
+        <div>
             <select class="moneda" id="monedaExtranjera">
                 <option value="USD" id="USD" selected>USD</option>
                 <option value="EUR" id="EUR">EUR</option>
@@ -31,12 +31,10 @@
                 <option value="JPY" id="JPY">JPY</option>
             </select>
         </div>
-        <!--
-        <input type="text" id="monedaExtranjera" placeholder="Ingrese moneda extranjera ( USD, EUR, BRS)">
-        -->
         <input type="submit" value="Calcular" class="calcular" id="solucion" onclick= calcular()>
+        <p id="parrafoResultado"></p>
     </form> 
-    <p id="parrafoResultado"></p>
+    
 
     <script src="./assets/js/calculadora.js"></script>
 </body>

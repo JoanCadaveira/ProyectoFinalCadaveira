@@ -4,15 +4,21 @@ console.log("Conversor de monedas");
 const operador1 = document.getElementById("numero1");
 const parrafoResultado = document.getElementById("parrafoResultado");
 
+let precios = [];
+
+fetch('/assets/js/precios.json')
+    .then((response) => response.json())
+    .then(data => { precios = data });
+
 
 //funcion para convertir
+
 function calcular(){
+    
+    console.log(precios);
+
     const moneda = monedaExtranjera.value;
     const numero1 = parseInt(operador1.value);
-    const USD = 156;
-    const EUR = 155.46;
-    const BRL = 29.48;
-    const JPY = 1.06;
     let resultadoDolar;
     let resultadoEuro;
     let resultadoReales;
@@ -23,7 +29,7 @@ function calcular(){
         //switch para realizar las operaciones
         switch (moneda) {
             case "USD":
-                resultadoDolar = numero1 / USD;
+                resultadoDolar = numero1 / precios[0].value;
                 parrafoResultado.style = "color: green";
                 parrafoResultado.innerText = `Usted puede comprar $${resultadoDolar.toFixed(2)}`;
                 //guardar en localStorage resultado
@@ -31,7 +37,7 @@ function calcular(){
                 break;
         
             case "EUR":
-                resultadoEuro = numero1 / EUR;
+                resultadoEuro = numero1 / precios[1].value;
                 parrafoResultado.style = "color: green";
                 parrafoResultado.innerText = `Usted puede comprar €${resultadoEuro.toFixed(2)}`;
                 //guardar en localStorage resultado
@@ -39,7 +45,7 @@ function calcular(){
                 break;
             
             case "BRL":
-                resultadoReales = numero1 / BRL;
+                resultadoReales = numero1 / precios[2].value;
                 parrafoResultado.style = "color: green";
                 parrafoResultado.innerText = `Usted puede comprar R$${resultadoReales.toFixed(2)}`;
                 //guardar en localStorage resultado
@@ -47,7 +53,7 @@ function calcular(){
                 break;
 
             case "JPY":
-                resultadoJPY = numero1 / JPY;
+                resultadoJPY = numero1 / precios[3].value;
                 parrafoResultado.style = "color: green";
                 parrafoResultado.innerText = `Usted puede comprar ¥${resultadoJPY.toFixed(2)}`;
                 //guardar en localStorage resultado
