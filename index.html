@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora virtual</title>
+    <link rel="stylesheet" href="./css/estilos.css">
+</head>
+<body>
+
+    <h1></h1>
+
+    <h2>Conversor de moneda</h2>
+    <p>Para poder utilizar nuestro servicio indique en la primer casilla cuantos pesos quiere vender
+        <br>
+        y luego en la segunda casilla coloque la moneda extranjera que desea comprar.
+    </p>
+
+    <br>
+
+    <form id="formCalculadora" method="dialog">
+        <label>Ingrese un número</label>
+        <input type="text" id="numero1" placeholder="Ingrese el primer número">
+        <label>Seleccione moneda</label>
+        <div >
+            <select class="moneda" id="monedaExtranjera">
+                <option value="USD" id="USD" selected>USD</option>
+                <option value="EUR" id="EUR">EUR</option>
+                <option value="BRL" id="BRL">BRL</option>
+                <option value="JPY" id="JPY">JPY</option>
+            </select>
+        </div>
+        <!--
+        <input type="text" id="monedaExtranjera" placeholder="Ingrese moneda extranjera ( USD, EUR, BRS)">
+        -->
+        <input type="submit" value="Calcular" class="calcular" id="solucion" onclick= calcular()>
+    </form> 
+    <p id="parrafoResultado"></p>
+
+    <script src="./assets/js/calculadora.js"></script>
+</body>
+</html>
