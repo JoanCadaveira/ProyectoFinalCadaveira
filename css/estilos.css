@@ -8,15 +8,32 @@ body{
     text-align: center;
 }
 
+.logo{
+    height: 100px;
+    width: 100px;
+    display: flex;
+    align-content: center;
+}
+
+.navbar>.container-fluid{
+    justify-content: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
 h2{
     margin-top: 30px;
     margin-bottom: 30px;
-    color: red;
+    color: #0d6efd;
     font-size: 40px;
     font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
 }
 
+label{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
 input{
     display: block;
@@ -24,8 +41,9 @@ input{
     margin-top: 20px;
     margin-bottom: 20px;
     width: 300px;
-    height: 25px;
+    height: 30px;
     text-align: center;
+    border-radius: 5px;
 }
 
 .moneda{
@@ -36,25 +54,32 @@ input{
     text-align: center;
     border: 1px solid black;
     border-radius: 5px;
-    background-color: rgb(206, 206, 255);
+    background-color: #0d6dfd8c;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 
 .calcular{
     border-radius: 5px;
-    font-style: italic;
     width: 100px;
-    background-color: rgb(206, 206, 255);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #0d6dfd8c;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 form{
     margin-top: 50px;
     border: 1px solid black;
-    border-radius: 5px;
     width: 500px;
-    height: 300px;
+    height: 360px;
     margin-right: auto;
     margin-left: auto;
+    margin-bottom: 100px;
+    background-color:#f6f6f6;
+    border-radius: 5px;
 }
+
+p{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+}
+

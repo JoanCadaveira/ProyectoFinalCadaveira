@@ -23,16 +23,17 @@ function calcular(){
     const numero1 = parseInt(operador1.value);
     
 
-    if((moneda == "USD" || moneda == "EUR" || moneda == "BRL" || moneda == "JPY") && !isNaN(numero1)){
+    if((moneda == "USD" || moneda == "EUR" || moneda == "BRL" || moneda == "JPY" || moneda == "CNY"
+    || moneda == "GBP" || moneda == "CHF" || moneda == "KRW") && !isNaN(numero1)){
         
     let resultadoDolar;
     let resultadoEuro;
     let resultadoReales;
     let resultadoJPY;
-
-    
-    //const para sweetalert
-    const btn = document.querySelector("#solucion");
+    let resultadoCNY;
+    let resultadoGBP;
+    let resultadoCHF;
+    let resultadoKRW;
 
 
         //switch para realizar las operaciones
@@ -44,17 +45,15 @@ function calcular(){
                 //guardar en localStorage resultado
                 localStorage.setItem("resultadoDolar", JSON.stringify(resultadoDolar.toFixed(2)))
                 //sweet alert
-                btn.addEventListener("click", () =>{
-                Swal.fire({
-                            title: "Usted puede comprar $ " + resultadoDolar.toFixed(2),
-                            showClass: {
-                            popup: 'animate__animated animate__fadeInDown'
-                            },
-                            hideClass: {
-                            popup: 'animate__animated animate__fadeOutUp'
-                            }
-                        })
-                    })
+                    Swal.fire({
+                                title: "Usted puede comprar $ " + resultadoDolar.toFixed(2),
+                                showClass: {
+                                popup: 'animate__animated animate__fadeInDown'
+                                },
+                                hideClass: {
+                                popup: 'animate__animated animate__fadeOutUp'
+                                }
+                            })                               
                 break;
         
             case "EUR":
@@ -64,7 +63,6 @@ function calcular(){
                 //guardar en localStorage resultado
                 localStorage.setItem("resultadoEuro", JSON.stringify(resultadoEuro.toFixed(2)))
                 //sweet alert
-                btn.addEventListener("click", () =>{
                 Swal.fire({
                             title: "Usted puede comprar € " + resultadoEuro.toFixed(2),
                             showClass: {
@@ -74,7 +72,6 @@ function calcular(){
                             popup: 'animate__animated animate__fadeOutUp'
                             }
                         })
-                    })
                 break;
             
             case "BRL":
@@ -84,7 +81,6 @@ function calcular(){
                 //guardar en localStorage resultado
                 localStorage.setItem("resultadoReales", JSON.stringify(resultadoReales.toFixed(2)))
                 //sweet alert
-                btn.addEventListener("click", () =>{
                     Swal.fire({
                                 title: "Usted puede comprar R$ " + resultadoReales.toFixed(2),
                                 showClass: {
@@ -94,7 +90,6 @@ function calcular(){
                                 popup: 'animate__animated animate__fadeOutUp'
                                 }
                             })
-                        })
                 break;
 
             case "JPY":
@@ -104,7 +99,6 @@ function calcular(){
                 //guardar en localStorage resultado
                 localStorage.setItem("resultadoYenes", JSON.stringify(resultadoJPY.toFixed(2)))
                 //sweet alert
-                btn.addEventListener("click", () =>{
                     Swal.fire({
                                 title: "Usted puede comprar ¥ " + resultadoJPY.toFixed(2),
                                 showClass: {
@@ -114,8 +108,79 @@ function calcular(){
                                 popup: 'animate__animated animate__fadeOutUp'
                                 }
                             })
-                        })
                 break;
+
+            case "CNY":
+                resultadoCNY = numero1 / precios[4].value;
+                parrafoResultado.style = "color: green";
+                parrafoResultado.innerText = `Usted puede comprar ¥ ${resultadoCNY.toFixed(2)}`;
+                //guardar en localStorage resultado
+                localStorage.setItem("resultadoYuanes", JSON.stringify(resultadoCNY.toFixed(2)))
+                //sweet alert
+                    Swal.fire({
+                                title: "Usted puede comprar ¥ " + resultadoCNY.toFixed(2),
+                                showClass: {
+                                popup: 'animate__animated animate__fadeInDown'
+                                },
+                                hideClass: {
+                                popup: 'animate__animated animate__fadeOutUp'
+                                }
+                            })
+                break;
+                
+            case "GBP":
+                resultadoGBP = numero1 / precios[5].value;
+                parrafoResultado.style = "color: green";
+                parrafoResultado.innerText = `Usted puede comprar £ ${resultadoGBP.toFixed(2)}`;
+                //guardar en localStorage resultado
+                localStorage.setItem("resultadoLibras", JSON.stringify(resultadoGBP.toFixed(2)))
+                //sweet alert
+                    Swal.fire({
+                                title: "Usted puede comprar £ " + resultadoGBP.toFixed(2),
+                                showClass: {
+                                popup: 'animate__animated animate__fadeInDown'
+                                },
+                                hideClass: {
+                                popup: 'animate__animated animate__fadeOutUp'
+                                }
+                            })
+                break;
+
+            case "CHF":
+                resultadoCHF = numero1 / precios[6].value;
+                parrafoResultado.style = "color: green";
+                parrafoResultado.innerText = `Usted puede comprar Fr ${resultadoCHF.toFixed(2)}`;
+                //guardar en localStorage resultado
+                localStorage.setItem("resultadoFrancoSuizo", JSON.stringify(resultadoCHF.toFixed(2)))
+                //sweet alert
+                    Swal.fire({
+                            title: "Usted puede comprar Fr " + resultadoCHF.toFixed(2),
+                            showClass: {
+                            popup: 'animate__animated animate__fadeInDown'
+                            },
+                            hideClass: {
+                            popup: 'animate__animated animate__fadeOutUp'
+                            }
+                        })
+            break;
+
+            case "KRW":
+                resultadoKRW = numero1 / precios[7].value;
+                parrafoResultado.style = "color: green";
+                parrafoResultado.innerText = `Usted puede comprar ₩ ${resultadoKRW.toFixed(2)}`;
+                //guardar en localStorage resultado
+                localStorage.setItem("resultadoWon", JSON.stringify(resultadoKRW.toFixed(2)))
+                //sweet alert
+                    Swal.fire({
+                            title: "Usted puede comprar ₩ " + resultadoKRW.toFixed(2),
+                            showClass: {
+                            popup: 'animate__animated animate__fadeInDown'
+                            },
+                            hideClass: {
+                            popup: 'animate__animated animate__fadeOutUp'
+                            }
+                        })
+            break;
         }    
     }else{
         //msj de error
